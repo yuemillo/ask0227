@@ -95,6 +95,9 @@
   console.log(fileInput);
   const file = fileInput.files[0];
   console.log(file);
+
+  const formData = new FormData();
+  formData.append('file-to-upload', file);
   axios.post(`${url}/api/${path}/admin/upload`, formData)
   .then((res) =>{
       console.log(res);
